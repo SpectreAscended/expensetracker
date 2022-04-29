@@ -4,8 +4,9 @@ const inputName = document.getElementById('name');
 const inputDate = document.getElementById('date');
 const inputAmount = document.getElementById('amount');
 const btnForm = document.querySelector('.form-btn');
-const btnDel = document.querySelector('.btn-del')
-const tbody = document.querySelector('.table-body')
+const btnDel = document.querySelector('.btn-del');
+const btnClr = document.querySelector('.clear-btn')
+const tbody = document.querySelector('.table-body');
 const defaultRow = document.querySelector('.default-row')
 
 let counter = 0;
@@ -21,14 +22,18 @@ const postItem = function(data) {
 }
 
 const loadData = function() {
-   const data = localStorage.getItem('listItem');
-   if(!data) return;
-   defaultRow.classList.add('hidden');
-   console.log(data);
-   postItem(data);
-}
+    for(let i = 1; i < 50; i++) {
+        const data = localStorage.getItem(`${i}`)
+        if(!data) return;
+        defaultRow.classList.add('hidden');
+        counter = i;
+        postItem(data);
+    };
+};
 
-// loadData();
+loadData();
+
+console.log(counter);
 
 btnForm.addEventListener('click', function(e) {
     e.preventDefault();
@@ -46,15 +51,14 @@ btnForm.addEventListener('click', function(e) {
 
     postItem(html);
 
-    // localStorage.setItem('listItem', html);
-    // tbody.insertAdjacentHTML("beforeend", html);
+    localStorage.setItem(`${counter}`, html);
+
     clearFields();
 });
 
 tbody.addEventListener('click', function(e) {
     const clicked = e.target.closest('.btn-del');
     if(!clicked) return;
-    console.log(clicked);
     clicked.closest('tr').innerHTML = '';
     counter--;
     if(counter === 0) {
@@ -62,3 +66,7 @@ tbody.addEventListener('click', function(e) {
     };
 });
 
+btnClr.addEventListener('click', function(e) {
+    e.preventDefault();
+    localStorage.clear();
+})

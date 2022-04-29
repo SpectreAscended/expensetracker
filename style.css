@@ -90,6 +90,20 @@ ul {
     background-color: var(--secondary-light);
 }
 
+.clear-btn {
+    padding: 0.9rem 1.9rem;
+    font-size: 1.6rem;
+    border: solid #000 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 250ms ease-out;
+    background-color: #fff;;
+}
+
+.clear-btn:hover {
+    background-color: #efefef;
+}
+
 /* Table */
 
 .btn-del {
