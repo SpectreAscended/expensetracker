@@ -1,0 +1,151 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: sans-serif;   
+}
+
+:root{
+    --primary: #333;
+    --primary-light: #444;
+    --secondary: #018801;
+    --secondary-light: #029b02fd;
+}
+
+main {
+    max-width: 120rem;
+    margin: 10rem auto 10rem
+}
+
+h1 {
+    color: var(--primary);
+    font-size: 6rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h2 {
+    color: var(--secondary);
+    font-size: 3rem;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Form */
+
+.form {
+    margin: 0 auto 5rem;
+    padding: 5rem
+}
+
+.label {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+}
+
+.input {
+    font-size: 1.6rem;
+    padding: .5rem;
+    border: solid #333 1px;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+
+}
+
+.input-name {
+
+    width: 100rem;
+}
+
+.input-date {
+    width: 45rem;
+    margin-right: 1rem;
+}
+
+.input-amount {
+    width: 45rem
+}
+
+.form-btn {
+    background-color: var(--secondary);
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    border: 0;
+    border-radius: 5px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: background-color 250ms ease-out;
+}
+
+.form-btn:hover {
+    background-color: var(--secondary-light);
+}
+
+/* Table */
+
+.btn-del {
+    background-color: #333;
+    color: #fff;
+    padding: .5rem 1rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: background-color 250ms ease-out;
+}
+
+.btn-del:hover {
+    background-color: #444;
+}
+
+
+.table-container {
+    max-width: 120rem;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 100rem;
+    border: solid #000 1px;
+    border-collapse: collapse;
+}
+
+th {
+    width: 30%;
+    background-color: var(--secondary);
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+tr {
+    border: solid #000 1px;
+}
+
+td {
+    font-size: 1.8rem;
+    padding-left: 1.5rem;
+    padding: 1rem 1.5rem;
+    border: solid #000 1px;
+}
+
+.default-row td {
+    border: none;
+}
+
+.hidden {
+    display: none;
+}
+
+/* tr:nth-child(odd) {
+    background-color: rgb(212, 212, 212);
+} */
+

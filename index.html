@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <main>
+        <div class="header">
+            <h1 class="heading-primary">Expense Tracker</h1>
+            <h2 class="heading-secondary">Add A New Item:</h2>
+        </div>
+        <div class="form">
+            <form action="/">
+                <div class="name-field">
+                    <label class="label" for="name">Name:</label>
+                    <input class="input input-name" type="text" name="name" id="name" placeholder="Where was the expense made?" >
+                </div>
+                <div class="secondary-field">
+                    <label class="label" for="date">Date:</label>
+                    <input class="input input-date" type="date" name="date" id="date">
+                    <label class="label" for="amount">Amount:</label>
+                    <input class="input input-amount" type="number"  min="0" id="amount" size="100" width="200">
+                </div>
+                <button class="form-btn" type="submit">Add Expense</button>
+            </form>
+        </div>
+        <div class="table-container">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <tr class="default-row">
+                        <td class="default-content">No expenses added yet!</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </main>
+        <img class="goat hidden" src="https://goatse.ru/hello.jpg" alt="">
+</body>
+</html>
