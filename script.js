@@ -9,6 +9,8 @@ const btnClr = document.querySelector('.clear-btn')
 const tbody = document.querySelector('.table-body');
 const defaultRow = document.querySelector('.default-row')
 
+// const foo = document.querySelector('.foo')
+
 let counter = 0;
 
 const clearFields = function() {
@@ -33,8 +35,6 @@ const loadData = function() {
 
 loadData();
 
-console.log(counter);
-
 btnForm.addEventListener('click', function(e) {
     e.preventDefault();
     if(!inputName.value || !inputAmount.value || inputAmount.value < 0) return;
@@ -42,7 +42,7 @@ btnForm.addEventListener('click', function(e) {
     counter++;
     defaultRow.classList.add('hidden');
 
-    const html = `<tr>
+    const html = `<tr class="content-rows">
     <td class="table-content">${inputName.value}</td>
     <td class="table-content">${inputDate.value}</td>
     <td class="table-content">$${(+inputAmount.value).toFixed(2)}</td>
@@ -67,6 +67,10 @@ tbody.addEventListener('click', function(e) {
 });
 
 btnClr.addEventListener('click', function(e) {
+    const trows = document.querySelectorAll('tbody .content-rows')
+    defaultRow.classList.remove('hidden');
     e.preventDefault();
+    trows.forEach(row => row.innerHTML = '');
     localStorage.clear();
+    counter = 0;
 })
